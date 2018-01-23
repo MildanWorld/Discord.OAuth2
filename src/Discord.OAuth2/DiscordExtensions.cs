@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using Microsoft.AspNetCore.Authentication;
 using Discord.OAuth2;
 

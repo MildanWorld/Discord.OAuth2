@@ -5,7 +5,8 @@ using System.Security.Claims;
 
 namespace Discord.OAuth2
 {
-    /// <summary> Configuration options for <see cref="DiscordHandler"/>. </summary>
+    /// <inheritdoc />
+    /// <summary> Configuration options for <see cref="T:Discord.OAuth2.DiscordHandler" />. </summary>
     public class DiscordOptions : OAuthOptions
     {
         /// <summary> Initializes a new <see cref="DiscordOptions"/>. </summary>
@@ -20,9 +21,9 @@ namespace Discord.OAuth2
             ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id", ClaimValueTypes.UInteger64);
             ClaimActions.MapJsonKey(ClaimTypes.Name, "username", ClaimValueTypes.String);
             ClaimActions.MapJsonKey(ClaimTypes.Email, "email", ClaimValueTypes.Email);
-            ClaimActions.MapJsonKey("urn:discord:discriminator", "discriminator", ClaimValueTypes.UInteger32);
-            ClaimActions.MapJsonKey("urn:discord:avatar", "avatar", ClaimValueTypes.String);
-            ClaimActions.MapJsonKey("urn:discord:verified", "verified", ClaimValueTypes.Boolean);
+            ClaimActions.MapJsonKey(DiscordClaimTypes.Discriminator, "discriminator", ClaimValueTypes.UInteger32);
+            ClaimActions.MapJsonKey(DiscordClaimTypes.Avatar, "avatar", ClaimValueTypes.String);
+            ClaimActions.MapJsonKey(DiscordClaimTypes.Verified, "verified", ClaimValueTypes.Boolean);
         }
         
         /// <summary> Gets or sets the Discord-assigned appId. </summary>
